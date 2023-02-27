@@ -1,0 +1,136 @@
+.header {
+    display: flex;
+    padding: 10px 25px;
+    font-size: 22px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    margin: 0 auto;
+
+    &__left {
+        display: flex;
+        height: 40px;
+
+        &_popup {
+            align-items: center;
+            display: flex;
+
+            svg:hover {
+                cursor: pointer;
+            }
+        }
+
+        &_img {
+            margin-left: 30px;
+        }
+
+        &_catalog {
+            display: flex;
+            align-items: center;
+            margin-left: 40px;
+            background-color: #1B81BA;
+            padding: 5px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            font-family: system-ui;
+
+            p {
+                margin-left: 5px;
+                color: white;
+            }
+        }
+
+        &_search {
+            display: flex;
+
+            input {
+                width: 500px;
+                margin-left: 40px;
+                border: 1px solid #CFCFCF;
+                border-radius: 5px;
+                padding-left: 10px;
+                font-size: 16px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            button {
+                top: -5px;
+                height: 100%;
+                font-size: 16px;
+                margin-left: 20px;
+                background-color: #1B81BA;
+                color: white;
+                border: none;
+                padding: 0 20px;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    &__right {
+        height: 40px;
+        display: flex;
+
+        &_cart {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+
+            .icon_cart {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .count_product {
+                    position: absolute;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: -8px;
+                    margin-left: 16px;
+                    border-radius: 50%;
+                    padding: auto;
+                    border: 2px solid #1B81BA;
+                    width: 40px;
+                    height: 30px;
+                    font-size: 16px;
+                }
+            }
+
+            .label_cart {
+                font-size: 16px;
+                margin-left: 30px;
+            }
+        }
+
+        &_map {
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+            .icon_map{
+                display: flex;
+                align-items: center;
+            }
+            .label_map{
+                font-size: 16px;
+                margin-left: 10px;
+            }
+        }
+        &_person{
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+            .icon_person{
+                display: flex;
+                align-items: center;
+            }
+            .label_person{
+                font-size: 16px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
