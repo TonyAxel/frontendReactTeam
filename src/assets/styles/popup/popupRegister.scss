@@ -1,0 +1,30 @@
+.popup {
+    color: black;
+
+    &_register{
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 200px;
+        position: absolute;
+        width: 300px;
+        font-family: $font;
+        font-weight: 500;
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+        z-index: 1005;
+        background-color: white;
+    }
+}
+
+[show-popup-register="true"]{
+    .popup_register{
+        display: block;
+    }
+    .layouts_black{
+        display: block;
+    }
+}

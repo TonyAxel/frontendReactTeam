@@ -1,0 +1,10 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    height: $heightFooter;
+    font-family: $font;
+    font-weight: 400;
+    top: calc(100vh - $heightFooter);
+}

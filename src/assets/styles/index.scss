@@ -1,4 +1,10 @@
+@import '/src/assets/styles/variables.scss';
 @import '/src/assets/styles/header.scss';
+@import '/src/assets/styles/popup/leftPopupMenu.scss';
+@import '/src/assets/styles/popup/popupAuth.scss';
+@import '/src/assets/styles/popup/popupRegister.scss';
+@import '/src/assets/styles/footer.scss';
+@import '/src/assets/styles/page/mainPage.scss';
 
 *,
 *::before,
@@ -25,7 +31,7 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
+  margin: 0 auto;
 }
 
 body {
@@ -33,6 +39,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    max-width: 2000px;
 }
 
 ul[class],

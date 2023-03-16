@@ -1,0 +1,129 @@
+.popup {
+    position: absolute;
+    background-color: white;
+    width: 250px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin-left: -100%;
+    font-family: $font;
+    z-index: 1001;
+
+    &_header {
+        margin: 10px;
+        background-color: $background-color-blue;
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+
+        .close {
+            display: flex;
+            justify-content: end;
+
+            .icon_close {
+
+                width: 24px;
+
+                svg {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .authentication {
+            display: flex;
+            padding-bottom: 10px;
+
+            .icon_person {
+                margin-left: 5px;
+                margin-top: 5px;
+            }
+
+            .information {
+                margin-left: 10px;
+                width: 170px;
+
+                a {
+                    color: inherit;
+
+                    &:hover {
+                        color: inherit;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 1;
+                }
+
+            }
+        }
+    }
+
+    &_main {
+        margin-top: 20px;
+        margin-left: 15px;
+
+        .icon_content {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .label_content_item {
+                font-weight: 600;
+                margin-left: 10px;
+                font-size: 20px;
+            }
+        }
+
+        .donate_help {
+            color: #CFCFCF;
+
+            a {
+                color: black;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+
+        .information_company {
+            color: #CFCFCF;
+
+            a {
+                font-size: 14px;
+                color: black;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+.layouts_black {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(39, 39, 39, 0.441);
+    z-index: 1000;
+    top: 0;
+    display: none;
+}
+[show-menu-left="true"]{
+    .popup{
+        margin-left: 0;
+        transition: 0.4s;
+    }
+    .layouts_black{
+        display: block;
+    }
+}
+
+[show-menu-left="false"] {
+    .popup{
+        margin-left: -100%;
+        transition: 0.4s;
+    }
+}
