@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom";
 
 const LeftPopupMenu = () => {
 
@@ -41,7 +41,7 @@ const LeftPopupMenu = () => {
                                 <>
                                     <a href="/#">Войти </a>
                                     |
-                                    <a onClick={() => showMenuRegister()}> Регистрация</a>
+                                    <Link to={'#'} onClick={() => showMenuRegister()}> Регистрация</Link>
                                 </>
                                 <>
                                     <p>Авторизуйтесь для получения расширенных возможностей</p>

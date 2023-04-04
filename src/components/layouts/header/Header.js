@@ -52,7 +52,7 @@ const Header = () => {
                         </svg>
                     </div>
                     <p className='label_map'>
-                        Москва
+                        Тюмень
                     </p>
                 </div>
                 <div className="header__right_person" onClick={() => showMenuAuth()}>

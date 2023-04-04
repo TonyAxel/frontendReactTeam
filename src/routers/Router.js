@@ -7,13 +7,13 @@ import PopupRegister from "../components/popup/popupRegister/PopupRegister";
 
 const Router = ({children}) => {
     return(
-        <div style={{margin: 'auto', position: 'relative', overflow: 'hidden', height: '100vh'}}>
+        <div style={{margin: 'auto', position: 'relative', height: '100vh'}}>
             <Header/>
+            <LeftPopupMenu/>
             <PopupAuth/>
             <PopupRegister/>
-            <LeftPopupMenu/>
                 {children}
-            <Footer/>
+            {/*<Footer/>*/}
         </div>
     )
 }

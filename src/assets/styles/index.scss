@@ -5,6 +5,8 @@
 @import '/src/assets/styles/popup/popupRegister.scss';
 @import '/src/assets/styles/footer.scss';
 @import '/src/assets/styles/page/mainPage.scss';
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
 
 *,
 *::before,
@@ -33,13 +35,12 @@ dl,
 dd {
   margin: 0 auto;
 }
-
 body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
+    height: inherit;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     max-width: 2000px;
+    background-color: #FAFAFA;
 }
 
 ul[class],

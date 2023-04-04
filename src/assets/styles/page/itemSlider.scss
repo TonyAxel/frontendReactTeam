@@ -1,0 +1,35 @@
+.item_slider__product{
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  height: 200px !important;
+  img{
+    height: 100px;
+    border-bottom: 1px solid black;
+  }
+  button{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+    background-color: $background-color-blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 85%;
+  }
+  p{
+    position: absolute;
+  }
+  .name_product{
+    top: 100px;
+  }
+  .old_price{
+    top: 120px;
+    margin-right: 40px;
+    text-decoration: line-through;
+  }
+  .new_price{
+    top: 135px;
+    color: $new-price;
+    font-weight: 600;
+  }
+}

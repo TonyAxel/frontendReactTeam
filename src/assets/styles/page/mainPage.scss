@@ -1,12 +1,97 @@
-.page{
-    &_content{
+@import "itemSlider";
+
+.page {
+    &_content {
+        font-family: $font;
         display: flex;
         justify-content: center;
         align-items: center;
-        .card{
-            &_header{
+        .card {
+            margin-top: 10px;
+            &_header {
+                font-family: inherit;
+                color: gray;
+                margin-left: 10px;
+
+                h2 {
+                    font-weight: 400;
+                }
+            }
+
+            &_body {
+                width: 900px;
+                height: 245px;
+                background-color: white;
+                padding-top: 10px;
+                border-radius: 10px;
+
+                .slick-slide>div {
+                    margin: 5px 10px;
+
+                    .item {
+                        display: flex !important;
+                        justify-content: center !important;
+                        height: 180px;
+                        border-radius: 10px;
+                        position: relative;
+                        &_shop{
+                            position: absolute;
+                            left: 10px;
+                            background-color: $background-color-blue;
+                            color: white;
+                            padding: 0 3px;
+                            border-radius: 5px;
+                            margin-top: 5px;
+                        }
+                    }
+
+                }
                 
+                .slick-next {
+                    height: 200px;
+                    background-color: rgb(226, 226, 226);
+                    border-radius: 3px;
+
+                    &::before {
+                        // border-radius: 50%;
+                        // width: 5px;
+                        // height: 5px;
+                        // color: rgb(0, 0, 0);
+                        border-left: 2px solid;
+                        border-top: 2px solid;
+                        padding: 5px;
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        transform: rotate(135deg);
+                        top: 50%;
+                        width: 0;
+                    }
+                }
+
+                .slick-prev {
+                    height: 200px;
+                    background-color: rgb(226, 226, 226);
+                    border-radius: 3px;
+
+                    &::before {
+                        // border-radius: 50%;
+                        // width: 5px;
+                        // height: 5px;
+                        // color: rgb(0, 0, 0);
+                        border-bottom: 2px solid;
+                        border-right: 2px solid;
+                        padding: 5px;
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        transform: rotate(135deg);
+                        top: 50%;
+                        right: 0;
+                    }
+                }
             }
         }
     }
+
 }
