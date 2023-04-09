@@ -14,6 +14,11 @@ const LeftPopupMenu = qualifiedName => {
         document.documentElement.setAttribute('show-popup-register', 'true');
     }
 
+    const showMenuAuth = () => {
+        document.documentElement.removeAttribute('show-popup-register', 'true');
+        document.documentElement.setAttribute('show-popup-auth', 'true');
+    }
+
     return (
         <>
             <div className="popup">
@@ -40,7 +45,7 @@ const LeftPopupMenu = qualifiedName => {
                             </div>
                             <div className="information">
                                 <>
-                                    <a href="/#">Войти </a>
+                                    <Link to={"#"} onClick={() => showMenuAuth()} >Войти </Link>
                                     |
                                     <Link to={'#'} onClick={() => showMenuRegister()}> Регистрация</Link>
                                 </>
