@@ -3,12 +3,14 @@ import Header from "../components/layouts/header/Header";
 import LeftPopupMenu from "../components/layouts/leftPopupMenu/LeftPopupMenu";
 import PopupAuth from "../components/popup/popupAuth/PopupAuth";
 import PopupRegister from "../components/popup/popupRegister/PopupRegister";
+import CategoryProductPopupMenu from "../components/popup/categoryProductPopupMenu/CategoryProductPopupMenu";
 
 
 const Router = ({children}) => {
     return(
         <div style={{margin: 'auto', position: 'relative', height: '100vh'}}>
             <Header/>
+            <CategoryProductPopupMenu/>
             <LeftPopupMenu/>
             <PopupAuth/>
             <PopupRegister/>

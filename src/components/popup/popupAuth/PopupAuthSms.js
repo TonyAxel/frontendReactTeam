@@ -5,6 +5,11 @@ const PopupAuthSms = () => {
 
     const [smsConfirm, setSmsConfirm] = useState(false)
 
+    const showMenuRegister = () => {
+        document.documentElement.removeAttribute('show-popup-auth', 'true');
+        document.documentElement.setAttribute('show-popup-register', 'true');
+    }
+
     return (
         <>
             {
@@ -13,13 +18,10 @@ const PopupAuthSms = () => {
                         <div className="popup_input_auth" >
                             <div className="input_auth">
                                 <input type="text" placeholder="Номер телефона (+7)" />
-                                <div className="input_auth_remember">
-                                    <input type="checkbox" name="selectme" id="selectme" /> <p>Запомнить меня</p>
-                                </div>
                                 <input type="submit" value="Продолжить" className="enter" onClick={() => setSmsConfirm(true)} />
                             </div>
                         </div>
-                        <div className="link_register">
+                        <div className="link_register" onClick={() => showMenuRegister()}>
                             <a href="/#">Зарегистрироваться</a>
                         </div>
                     </>

@@ -1,11 +1,12 @@
 import {Link} from "react-router-dom";
 
-const LeftPopupMenu = () => {
+const LeftPopupMenu = qualifiedName => {
 
     const closeLeftMenu = () =>{
         document.documentElement.removeAttribute('show-menu-left', 'true');
         document.documentElement.removeAttribute('show-popup-auth', 'true');
         document.documentElement.removeAttribute('show-popup-register', 'true');
+        document.documentElement.removeAttribute('show-popup-category', 'true')
     }
 
     const showMenuRegister = () => {

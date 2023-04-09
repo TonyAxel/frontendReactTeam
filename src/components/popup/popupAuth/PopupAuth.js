@@ -1,11 +1,6 @@
-import { useState } from "react";
-import PopupAuthPassword from "./PopupAuthPassword";
 import PopupAuthSms from "./PopupAuthSms";
 
 const PopupAuth = () => {
-
-    const [authSelect, setAuthSelect] = useState(true)
-
     const closeAuthMenu = () => {
         document.documentElement.removeAttribute('show-popup-auth', 'true');
     }
@@ -31,20 +26,7 @@ const PopupAuth = () => {
                     </div>
                 </div>
                 <div className="popup_body">
-                    <div className="popup_auth_select">
-                        <div className="auth_select">
-                            <div className="select_password" onClick={() => setAuthSelect(true)} style={authSelect ? { color: 'white', backgroundColor: '#1B81BA' } : null}>
-                                Пароль
-                            </div>
-                            <div className="select_sms" onClick={() => setAuthSelect(false)} style={!authSelect ? { color: 'white', backgroundColor: '#1B81BA' } : null} >
-                                СМС
-                            </div>
-                        </div>
-                    </div>
-                    {
-                        authSelect ? <PopupAuthPassword /> : <PopupAuthSms />
-                    }
-
+                    <PopupAuthSms />
                 </div>
             </div>
         </>

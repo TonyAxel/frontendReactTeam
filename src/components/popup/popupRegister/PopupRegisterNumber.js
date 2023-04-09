@@ -5,6 +5,11 @@ const PopupRegisterNumber = () => {
 
     const [smsConfirm, setSmsConfirm] = useState(false)
 
+    const showMenuAuth = () => {
+        document.documentElement.removeAttribute('show-popup-register', 'true');
+        document.documentElement.setAttribute('show-popup-auth', 'true');
+    }
+
     return (
         <>
             {
@@ -16,7 +21,7 @@ const PopupRegisterNumber = () => {
                                 <input type="submit" value="Продолжить" className="enter" onClick={() => setSmsConfirm(true)} />
                             </div>
                         </div>
-                        <div className="link_register">
+                        <div className="link_register" onClick={() => showMenuAuth()}>
                             <a href="/#">Войти</a>
                         </div>
                     </>
