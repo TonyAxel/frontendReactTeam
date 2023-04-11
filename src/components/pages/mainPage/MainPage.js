@@ -1,5 +1,6 @@
 import Slider from 'react-slick'
 import ItemSlider from "./itemSlider/ItemSlider";
+import {Link} from "react-router-dom";
 const MainPage = () => {
     return (
         <>
@@ -16,23 +17,30 @@ const MainPage = () => {
                                 slidesToShow = {5}
                                 slidesToScroll = {5}
                             >
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-                                <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
-
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
+                                <Link to={'/shop/1/products'}>
+                                    <div className='item'><img src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png" alt=""/></div>
+                                </Link>
                             </Slider>
                         </div>
                     </div>

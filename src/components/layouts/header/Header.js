@@ -1,4 +1,5 @@
 import ShopLogo2 from '../../../assets/images/ShopLogo2.png'
+import {Link} from "react-router-dom";
 
 const Header = () => {
 
@@ -22,7 +23,9 @@ const Header = () => {
                         <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                     </svg>
                 </div>
-                <img src={ShopLogo2} alt="img" className="header__left_img" width={50} height={40} />
+                <Link to={'/main'}>
+                    <img src={ShopLogo2} alt="img" className="header__left_img" width={50} height={40} />
+                </Link>
                 <div className="header__left_catalog" onClick={() => showMenuCategory()} >
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" className="bi bi-basket3" viewBox="0 0 20 20">
                         <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z" />

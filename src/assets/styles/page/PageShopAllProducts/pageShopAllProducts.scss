@@ -1,0 +1,16 @@
+@import "itemAllProducts";
+
+.content_products{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .items_products{
+    margin-top: 50px;
+    display: grid;
+    grid-template-areas: "a a a a a";
+    grid-auto-columns: 250px;
+    gap: 50px;
+  }
+}
