@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from "classnames";
 
-const ItemAllProducts = ({name, oldPrice, newPrice}) => {
+const ItemAllProducts = ({name, oldPrice, newPrice, photo}) => {
 
     const classes = classNames({
         'new_price_p_salle': newPrice !== '',
