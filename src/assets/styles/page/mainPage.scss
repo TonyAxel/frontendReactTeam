@@ -34,14 +34,16 @@
                         height: 220px;
                         border-radius: 10px;
                         position: relative;
+                        padding-top: 10px;
                         &_shop{
                             position: absolute;
+                            font-size: 14px;
                             left: 10px;
                             background-color: $background-color-blue;
                             color: white;
                             padding: 0 3px;
                             border-radius: 5px;
-                            margin-top: 5px;
+                            margin-top: -5px;
                         }
                     }
 

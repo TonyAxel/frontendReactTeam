@@ -31,14 +31,14 @@ const MainPage = () => {
                         <Slider
                             dots={true}
                             speed={1500}
-                            slidesToShow={3}
-                            slidesToScroll={3}
+                            slidesToShow={2}
+                            slidesToScroll={1}
                         >
                             {
                                 (shops || []).map((shop, key) => {
                                     return <Link key={shop.id} to={`/shop/${shop.id}/products`}>
                                         <div key={shop.id} className='item'><img
-                                            src="https://irecommend.ru/sites/default/files/product-images/2257062/DZ9FyUHkfg9rWk5R2UrZA.png"
+                                            src={shop.logo_shop}
                                             alt=""/>
                                         </div>
                                     </Link>

@@ -103,13 +103,14 @@
     }
 }
 .layouts_black {
-    position: absolute;
+    //position: absolute;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(39, 39, 39, 0.441);
     z-index: 1000;
     top: 0;
     display: none;
+    position: fixed;
 }
 [show-menu-left="true"]{
     .popup{

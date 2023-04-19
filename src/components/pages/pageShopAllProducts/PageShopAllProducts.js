@@ -1,7 +1,6 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import ItemAllProducts from "./ItemAllProducts";
-import {useState} from "react";
 const PageShopAllProducts = () => {
     const {id} = useParams();
 

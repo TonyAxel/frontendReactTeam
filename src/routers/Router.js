@@ -8,7 +8,7 @@ import CategoryProductPopupMenu from "../components/popup/categoryProductPopupMe
 
 const Router = ({children}) => {
     return(
-        <div style={{margin: 'auto', position: 'relative', height: '100vh'}}>
+        <div id={'main'} style={{margin: 'auto', position: 'relative', height: '100vh'}}>
             <Header/>
             <CategoryProductPopupMenu/>
             <LeftPopupMenu/>
