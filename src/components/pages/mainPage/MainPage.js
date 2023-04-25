@@ -3,20 +3,25 @@ import ItemSlider from "./itemSlider/ItemSlider";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import AxiosClient from "../../../axiosClient/AxiosClient";
+import {ClipLoader} from "react-spinners";
 
 const MainPage = () => {
 
     const [shops, setShops] = useState([]);
     const [discauntedProduct, setDiscauntedProduct] = useState([])
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+
         AxiosClient.post('/shops')
             .then((res) => {
                 setShops(res.data);
+                setLoading(false)
             })
         AxiosClient.post('/discountedProduct')
             .then((res) => {
                 setDiscauntedProduct(res.data);
+                setLoading(false)
             })
     }, [])
 
@@ -61,13 +66,13 @@ const MainPage = () => {
                         >
                             {
                                 (discauntedProduct || []).map((product, key) => {
-                                    if(key < 10)
-                                    return <ItemSlider key={product.id}
-                                                       product={product.name_product}
-                                                       oldPrice={product.cost}
-                                                       newPrice={product.discounted_cost}
-                                                       shop={product.shop.name_shop}
-                                                       photo={product.image}/>
+                                    if (key < 10)
+                                        return <ItemSlider key={product.id}
+                                                           product={product.name_product}
+                                                           oldPrice={product.cost}
+                                                           newPrice={product.discounted_cost}
+                                                           shop={product.shop.name_shop}
+                                                           photo={product.image}/>
 
                                 })
                             }
@@ -89,7 +94,7 @@ const MainPage = () => {
                         >
                             {
                                 (discauntedProduct || []).map((product, key) => {
-                                    if(key > 10)
+                                    if (key > 10)
                                         return <ItemSlider key={product.id}
                                                            product={product.name_product}
                                                            oldPrice={product.cost}
@@ -104,6 +109,39 @@ const MainPage = () => {
                 </div>
             </div>
         </div>
+        {
+            loading ?
+                <div style={{
+                    position: 'fixed',
+                    backgroundColor: 'black',
+                    width: '100%',
+                    height: '100vh',
+                    top: '0',
+                    bottom: '0',
+                    opacity: '0.3',
+                    display: 'flex',
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                    <ClipLoader
+                        color={'#ffffff'}
+                        loading={loading}
+                        cssOverride={{
+                            opacity: '1',
+                            display: "flex",
+                            borderColor: "red",
+                            border: '5px solid',
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}
+                        size={150}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                    />
+                </div>
+                :
+                null
+        }
     </>)
 }
 

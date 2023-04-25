@@ -4,17 +4,22 @@ import LeftPopupMenu from "../components/layouts/leftPopupMenu/LeftPopupMenu";
 import PopupAuth from "../components/popup/popupAuth/PopupAuth";
 import PopupRegister from "../components/popup/popupRegister/PopupRegister";
 import CategoryProductPopupMenu from "../components/popup/categoryProductPopupMenu/CategoryProductPopupMenu";
+import {StrictMode} from "react";
 
 
 const Router = ({children}) => {
-    return(
+    return (
         <div id={'main'} style={{margin: 'auto', position: 'relative', height: '100vh'}}>
-            <Header/>
-            <CategoryProductPopupMenu/>
-            <LeftPopupMenu/>
+            <StrictMode>
+                <Header/>
+                <CategoryProductPopupMenu/>
+                <LeftPopupMenu/>
+            </StrictMode>
             <PopupAuth/>
             <PopupRegister/>
+            <StrictMode>
                 {children}
+            </StrictMode>
             {/*<Footer/>*/}
         </div>
     )

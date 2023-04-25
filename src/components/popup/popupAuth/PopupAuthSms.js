@@ -1,6 +1,5 @@
 import { useState } from "react";
 import PopupAuthSmsCode from "./PopupAuthSmsCode";
-
 const PopupAuthSms = () => {
 
     const [smsConfirm, setSmsConfirm] = useState(false)
@@ -17,7 +16,6 @@ const PopupAuthSms = () => {
                     <>
                         <div className="popup_input_auth" >
                             <div className="input_auth">
-                                <input type="text" placeholder="Номер телефона (+7)" />
                                 <input type="submit" value="Продолжить" className="enter" onClick={() => setSmsConfirm(true)} />
                             </div>
                         </div>

@@ -17,7 +17,6 @@ const CategoryProductPopupMenu = () => {
             )
     }, []);
 
-    console.log(showSubcategory)
     return (
         <div className="category_product">
             <div className="category">
