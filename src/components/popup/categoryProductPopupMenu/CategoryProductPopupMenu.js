@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from "react";
 import AxiosClient from "../../../axiosClient/AxiosClient";
+import {Link} from "react-router-dom";
 
 const CategoryProductPopupMenu = () => {
 
@@ -23,9 +24,9 @@ const CategoryProductPopupMenu = () => {
                 {
                     categorySubcategory.map((category) => {
                         return(
-                            <div key={category.id} onMouseEnter={() => setShowSubcategory(category.id)}>
+                            <Link to={`/category/${category.id}/products`} key={category.id} onMouseEnter={() => setShowSubcategory(category.id)}>
                                 {category.name_category}
-                            </div>
+                            </Link>
                         )
 
                     })
@@ -38,11 +39,11 @@ const CategoryProductPopupMenu = () => {
                         if (category.id === showSubcategory)
                             return category.sub_categories.map((subCategory) => {
                                 return(
-                                    <div key={subCategory.id}>
+                                    <Link to={`/subcategory/${subCategory.id}/products`} key={subCategory.id}>
                                         {
                                             subCategory.name_subcategory
                                         }
-                                    </div>
+                                    </Link>
                                 )
                             })
                         else {

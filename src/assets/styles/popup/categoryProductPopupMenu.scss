@@ -33,10 +33,13 @@
     &::-webkit-scrollbar-thumb:active  {
       background: $background-color-blue;
     }
-    div{
+    a{
       padding: 10px;
       border-radius: 10px;
       cursor: pointer;
+      display: block;
+      color: black;
+      text-decoration: none;
       &:hover{
         background-color: $background-color-blue;
         color: white;
@@ -63,10 +66,13 @@
     &::-webkit-scrollbar-thumb:active  {
       background: $background-color-blue;
     }
-    div{
+    a{
       padding: 10px;
       border-radius: 10px;
       cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: black;
       &:hover{
         background-color: $background-color-blue;
         color: white;
