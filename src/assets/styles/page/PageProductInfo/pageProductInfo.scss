@@ -1,0 +1,77 @@
+.content_product {
+  left: 0;
+  right: 0;
+  width: 1200px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 15px;
+  h2{
+    margin-left: 20px;
+  }
+  &_main{
+    display: flex;
+    &_photo{
+      width: 300px;
+      margin-top: 20px;
+      img{
+        border-right: 2px solid lightgray;
+      }
+    }
+    &_info{
+      margin-top: 20px;
+      margin-left: 20px;
+      &_price{
+        &_old{
+          text-decoration: line-through;
+          margin-left: 20px;
+          position: absolute;
+          margin-top: -10px;
+        }
+        &_new{
+          color: $new-price;
+          font-size: 25px;
+          padding: 0;
+          margin-top: 10px;
+        }
+      }
+      button{
+        margin-top: 10px;
+        border: none;
+        background-color: $background-color-blue;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 5px;
+      }
+      &_description{
+        margin-top: 10px;
+        max-width: 600px;
+      }
+      &_shops{
+        margin-top: 10px;
+        &_shop{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 170px;
+          border-radius: 5px;
+          border: 2px solid lightgray;
+          margin-top: 5px;
+          img{
+            width: 50px;
+          }
+          p{
+            margin: 0 5px;
+          }
+          &_name_shop{
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &_low-cost{
+            color: $new-price;
+          }
+        }
+      }
+    }
+  }
+}
