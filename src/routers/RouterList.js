@@ -4,12 +4,14 @@ import {Navigate} from "react-router-dom";
 import PageCategoryAllProducts from "../components/pages/pageCategoryAllProducts/PageCategoryAllProducts";
 import PageSubCategoryAllProducts from "../components/pages/pageSubCategoryAllProducts/pageSubCategoryAllProducts";
 import PageProductInfo from "../components/pages/pageProductInfo/PageProductInfo";
+import PageProfile from "../components/pages/pageProfile/PageProfile";
 const publicRouters = [
     {path: '/', component: <MainPage/>},
     {path: '/shop/:id/products', component: <PageShopAllProducts/>},
     {path: '/category/:id/products', component: <PageCategoryAllProducts/>},
     {path: '/subcategory/:id/products', component: <PageSubCategoryAllProducts/>},
     {path: '/product/:id', component: <PageProductInfo/>},
+    {path: '/profile', component: <PageProfile/>},
     {path: '*', component: <Navigate to={'/'}/>}
 ]
 

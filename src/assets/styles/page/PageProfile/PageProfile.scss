@@ -1,0 +1,93 @@
+.profile{
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px 15px 15px 15px;
+  margin-top: 20px;
+  left: 0;
+  &_placeholder-phone{
+    margin-top: 10px;
+    p:first-child{
+      font-weight: bold;
+    }
+    p:last-child{
+      color: grey;
+    }
+  }
+  &_phones{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    &_old-phone{
+      width: 300px;
+      height: 50px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid lightgray;
+      padding-left: 10px;
+    }
+    &_new-phone{
+      margin-top: 10px;
+      width: 300px;
+      height: 50px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid lightgray;
+      padding-left: 10px;
+    }
+    button{
+      margin-top: 10px;
+      width: 150px;
+      height: 50px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      background-color: $background-color-blue;
+    }
+  }
+  &_code{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    &_code{
+      width: 300px;
+      height: 50px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid lightgray;
+      padding-left: 10px;
+    }
+    button{
+      margin-top: 10px;
+      width: 350px;
+      height: 50px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      background-color: $background-color-blue;
+    }
+  }
+  &_name{
+    margin-top: 10px;
+    &_name{
+      width: 300px;
+      height: 50px;
+      border-radius: 5px;
+      padding-left: 10px;
+      outline: none;
+      border: 1px solid lightgray;
+    }
+    p{
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    button{
+      margin-left: 10px;
+      width: 100px;
+      height: 50px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      background-color: $background-color-blue;
+    }
+  }
+}
