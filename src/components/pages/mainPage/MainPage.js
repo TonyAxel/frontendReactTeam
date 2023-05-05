@@ -8,7 +8,8 @@ import {ClipLoader} from "react-spinners";
 const MainPage = () => {
 
     const [shops, setShops] = useState([]);
-    const [discauntedProduct, setDiscauntedProduct] = useState([])
+    const [discauntedPerecr, setDiscauntedPerecr] = useState([]);
+    const [discauntedMagnit, setDiscauntedMagnit] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -20,7 +21,9 @@ const MainPage = () => {
             })
         AxiosClient.post('/discountedProduct')
             .then((res) => {
-                setDiscauntedProduct(res.data);
+                console.log(res.data)
+                setDiscauntedMagnit(res.data[0]);
+                setDiscauntedPerecr(res.data[1]);
                 setLoading(false)
             })
     }, [])
@@ -55,7 +58,7 @@ const MainPage = () => {
                 </div>
                 <div className="card">
                     <div className="card_header">
-                        <h2>Акции</h2>
+                        <h2>Акции магнит</h2>
                     </div>
                     <div className="card_body">
                         <Slider
@@ -65,7 +68,7 @@ const MainPage = () => {
                             slidesToScroll={5}
                         >
                             {
-                                (discauntedProduct || []).map((product, key) => {
+                                (discauntedMagnit || []).map((product, key) => {
                                     if (key < 10)
                                         return <ItemSlider key={product.id}
                                                            product={product.name_product}
@@ -83,7 +86,7 @@ const MainPage = () => {
                 </div>
                 <div className="card" style={{'marginTop': '10'}}>
                     <div className="card_header">
-                        <h2>Акции</h2>
+                        <h2>Акции перекресток</h2>
                     </div>
                     <div className="card_body">
                         <Slider
@@ -93,8 +96,7 @@ const MainPage = () => {
                             slidesToScroll={5}
                         >
                             {
-                                (discauntedProduct || []).map((product, key) => {
-                                    if (key > 10)
+                                (discauntedPerecr || []).map((product) => {
                                         return <ItemSlider key={product.id}
                                                            product={product.name_product}
                                                            oldPrice={product.cost}
