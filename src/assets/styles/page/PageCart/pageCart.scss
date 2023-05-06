@@ -1,0 +1,172 @@
+.cart_content{
+  margin-top: 30px;
+  display: flex;
+  width: 1200px;
+  justify-content: space-evenly;
+  &_products{
+    background-color: white;
+    padding: 30px 30px;
+    border-radius: 5px;
+    &_header{
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid grey;
+      padding-bottom: 20px;
+      align-items: center;
+      &_name{
+        font-size: 25px;
+        font-weight: bold;
+        margin-right: 100px;
+      }
+      &_weight{
+        margin-right: 50px;
+      }
+
+      button{
+        background-color: #ff2020;
+        border-radius: 5px;
+        border: none;
+        padding: 0 15px;
+        height: 40px;
+        color: white;
+      }
+    }
+    .cart_content_products-products{
+      &_item{
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        justify-content: space-between;
+        &-img{
+          width: 100px;
+        }
+        &-name{
+          font-weight: normal;
+        }
+        &-weight{
+          color: gray;
+        }
+        &-count{
+          display: flex;
+          align-items: center;
+          &_delete{
+            button{
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 5px;
+              background-color: $background-color-blue;
+            }
+          }
+          &_count{
+            margin: 0 15px;
+            span{
+              font-weight: bold;
+            }
+          }
+          &_add{
+            button{
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 5px;
+              background-color: $background-color-blue;
+            }
+          }
+          &_full-delete{
+            margin-top: 8px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  &_shops{
+    background-color: white;
+    padding: 30px 30px;
+    border-radius: 5px;
+    &_header{
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid grey;
+      padding-bottom: 20px;
+      align-items: center;
+      &_name{
+        font-size: 20px;
+        font-weight: bold;
+      }
+      button{
+        background-color: $background-color-blue;
+        border-radius: 5px;
+        border: none;
+        height: 40px;
+        color: white;
+        margin-left: 40px;
+      }
+    }
+    &-shops{
+      &_item{
+        margin-top: 10px;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        &-header{
+          border-bottom: 1px solid lightgray;
+          padding-bottom: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &-logo_name{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .logo{
+              width: 60px;
+              img{
+                border-radius: 10px;
+              }
+            }
+            .name{
+              font-weight: normal;
+              margin-left: 10px;
+            }
+          }
+          &-price{
+            color: grey;
+          }
+        }
+        &-body{
+          display: flex;
+          &-count{
+            margin-right: 150px;
+            span{
+              font-weight: 500;
+            }
+            ul{
+              margin: 0;
+              padding-left: 5px;
+              li{
+                padding-left: 5px;
+                list-style-type: none;
+              }
+            }
+          }
+          &-no_count{
+            margin-right: 80px;
+            span{
+              font-weight: 500;
+            }
+            ul{
+              margin: 0;
+              padding: 0;
+              li{
+                color: grey;
+                list-style-type: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
