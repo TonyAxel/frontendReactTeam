@@ -1,12 +1,13 @@
 import {useState} from "react"
 import PopupRegisterCode from "./popupRegisterCode";
 import {ErrorMessage, Field, Form, Formik} from "formik";
-import * as Yup from 'yup'
 import MaskedInput from "react-text-mask";
+import axiosClient from "../../../axiosClient/AxiosClient";
 
 const PopupRegisterNumber = () => {
 
-    const [smsConfirm, setSmsConfirm] = useState(false)
+    const [smsConfirm, setSmsConfirm] = useState(false);
+
 
     const showMenuAuth = () => {
         document.documentElement.removeAttribute('show-popup-register', 'true');
@@ -24,16 +25,23 @@ const PopupRegisterNumber = () => {
                                     phone: ""
                                 }
                             }
-                            validationSchema={
-                                Yup.object({
-                                    phone: Yup.string().required("Введите телефон.")
-                                })
+                            validate={
+                                (values) => {
+                                    const errors = {};
+                                    if (!values.phone) {
+                                        errors.phone = 'Обязательное поле'
+                                    } else if (values.phone.replace(/[-+()\s_]/g, '').length !== 11) {
+                                        errors.phone = 'Введите номер телефона полностью';
+                                    }
+
+                                    return errors;
+                                }
                             }
                             onSubmit={
-                                (value) => {
-                                    if(value.phone.replace(/[-+()\s_]/g, '').length === 11){
-                                        setSmsConfirm(true)
-                                    }
+                                (values) => {
+                                    localStorage.setItem('phone', values.phone.replace(/[-+()\s_]/g, ''))
+                                    axiosClient.post('/sendCode', {phone: values.phone.replace(/[-+()\s_]/g, '')})
+                                        .then(r => setSmsConfirm(true))
                                 }
                             }
                         >
@@ -45,9 +53,9 @@ const PopupRegisterNumber = () => {
                                             render={({field}) => (
                                                 <MaskedInput
                                                     {...field}
-                                                    mask={["+","7", "(", /[1-9]/, /\d/, /\d/, ")", " ",
-                                                            /\d/, /\d/, /\d/, "-",
-                                                            /\d/, /\d/,"-", /\d/, /\d/
+                                                    mask={["+", "7", "(", /[1-9]/, /\d/, /\d/, ")", " ",
+                                                        /\d/, /\d/, /\d/, "-",
+                                                        /\d/, /\d/, "-", /\d/, /\d/
                                                     ]}
                                                     id="phone"
                                                     placeholder="Введите свой номер телефона"

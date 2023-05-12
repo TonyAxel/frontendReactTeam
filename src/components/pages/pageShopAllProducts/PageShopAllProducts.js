@@ -15,7 +15,6 @@ const PageShopAllProducts = () => {
             .then((res) => {
                 setShop(res.data[0][0])
                 setProducts(res.data[1])
-                console.log(res.data[1])
             })
 
     }, [count, id]);

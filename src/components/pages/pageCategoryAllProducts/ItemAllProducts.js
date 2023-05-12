@@ -1,12 +1,27 @@
 import React from 'react';
 import classNames from "classnames";
+import {setErrorAuth} from "../../../store/AuthSlice";
+import {useDispatch, useSelector} from "react-redux";
 
 const ItemAllProducts = ({name, oldPrice, newPrice, photo}) => {
+
+    const dispatch = useDispatch();
+    const {user} = useSelector(state => state.authReducer)
 
     const classes = classNames({
         'new_price_p_salle': newPrice !== '',
         'new_price_p': newPrice === ''
     })
+
+    const addProduct = () => {
+        if(user.id){
+
+        }
+        else{
+            dispatch(setErrorAuth(true))
+        }
+    }
+
     return (
         <div className="item_product">
             <div className="product_img" >
@@ -26,7 +41,7 @@ const ItemAllProducts = ({name, oldPrice, newPrice, photo}) => {
                     </div>
 
             }
-            <button>Добавить</button>
+            <button onClick={() => addProduct()}>Добавить</button>
         </div>
     );
 };

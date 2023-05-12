@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import AxiosClient from "../../../axiosClient/AxiosClient";
 import {ClipLoader} from "react-spinners";
+import {useSelector} from "react-redux";
 
 const MainPage = () => {
 
@@ -21,7 +22,6 @@ const MainPage = () => {
             })
         AxiosClient.post('/discountedProduct')
             .then((res) => {
-                console.log(res.data)
                 setDiscauntedMagnit(res.data[0]);
                 setDiscauntedPerecr(res.data[1]);
                 setLoading(false)
@@ -69,8 +69,8 @@ const MainPage = () => {
                         >
                             {
                                 (discauntedMagnit || []).map((product, key) => {
-                                    if (key < 10)
                                         return <ItemSlider key={product.id}
+                                                           id={product.id}
                                                            product={product.name_product}
                                                            oldPrice={product.cost}
                                                            newPrice={product.discounted_cost}
@@ -98,6 +98,7 @@ const MainPage = () => {
                             {
                                 (discauntedPerecr || []).map((product) => {
                                         return <ItemSlider key={product.id}
+                                                           id={product.id}
                                                            product={product.name_product}
                                                            oldPrice={product.cost}
                                                            newPrice={product.discounted_cost}
