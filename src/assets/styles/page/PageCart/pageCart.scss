@@ -38,18 +38,23 @@
         align-items: center;
         justify-content: space-between;
         &-img{
-          width: 100px;
+          width: 50px;
         }
         &-name{
+          margin-left: 10px;
+          flex: 1;
           font-weight: normal;
         }
         &-weight{
+          text-align: start;
+          width: 120px;
           color: gray;
         }
         &-count{
           display: flex;
           align-items: center;
           &_delete{
+            margin-left: 10px;
             button{
               color: white;
               font-weight: bold;

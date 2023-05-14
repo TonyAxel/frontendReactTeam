@@ -14,9 +14,8 @@
     &_photo{
       width: 300px;
       margin-top: 20px;
-      img{
-        border-right: 2px solid lightgray;
-      }
+      display: flex;
+      justify-content: center;
     }
     &_info{
       margin-top: 20px;
@@ -50,10 +49,10 @@
       &_shops{
         margin-top: 10px;
         &_shop{
-          display: flex;
-          justify-content: center;
+          display: inline-flex;
+          justify-content: space-between;
           align-items: center;
-          width: 170px;
+          width: 250px;
           border-radius: 5px;
           border: 2px solid lightgray;
           margin-top: 5px;

@@ -2,7 +2,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     user: {},
-    errorAuth: false
+    errorAuth: false,
+    countProduct: 0
 }
 
 const AuthSlice = createSlice({
@@ -14,6 +15,9 @@ const AuthSlice = createSlice({
         },
         setErrorAuth: (state, action) => {
             state.errorAuth = action.payload;
+        },
+        setCountProduct: (state, action) => {
+            state.countProduct = action.payload;
         }
     }
 })
@@ -21,6 +25,7 @@ const AuthSlice = createSlice({
 export const {
     setUser,
     setErrorAuth,
+    setCountProduct
 } = AuthSlice.actions
 
 export default AuthSlice.reducer

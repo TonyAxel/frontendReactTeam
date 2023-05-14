@@ -1,23 +1,23 @@
 import React from 'react';
 
-const ItemProductsCart = () => {
+const ItemProductsCart = ({image, name, weight, count}) => {
     return (
         <div className='cart_content_products-products_item'>
             <div className="cart_content_products-products_item-img">
-                <img src="https://catherineasquithgallery.com/uploads/posts/2021-02/1614527202_135-p-yabloko-na-belom-fone-177.jpg" alt=""/>
+                <img src={image} alt=""/>
             </div>
             <div className="cart_content_products-products_item-name">
-                <span>Яблоки</span>
+                <span>{name}</span>
             </div>
             <div className="cart_content_products-products_item-weight">
-                <span>Вес: 1000 гр</span>
+                <span>Вес: {weight} гр</span>
             </div>
             <div className="cart_content_products-products_item-count">
                 <div className="cart_content_products-products_item-count_delete">
                     <button>—</button>
                 </div>
                 <div className="cart_content_products-products_item-count_count">
-                    <span>1</span>
+                    <span>{count}</span>
                 </div>
                 <div className="cart_content_products-products_item-count_add">
                     <button>╂</button>

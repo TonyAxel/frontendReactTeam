@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from "classnames";
-import {setErrorAuth} from "../../../store/AuthSlice";
 import {useDispatch, useSelector} from "react-redux";
+import AddProductInCart from "../../functions/addProductInCart";
+import {Link} from "react-router-dom";
 
-const ItemAllProducts = ({name, oldPrice, newPrice, photo}) => {
+const ItemAllProducts = ({name, oldPrice, newPrice, photo, id}) => {
 
     const dispatch = useDispatch();
     const {user} = useSelector(state => state.authReducer)
@@ -13,17 +14,8 @@ const ItemAllProducts = ({name, oldPrice, newPrice, photo}) => {
         'new_price_p': newPrice === ''
     })
 
-    const addProduct = () => {
-        if(user.id){
-
-        }
-        else{
-            dispatch(setErrorAuth(true))
-        }
-    }
-
     return (
-        <div className="item_product">
+        <Link to={`/product/${id}`} className="item_product">
             <div className="product_img" >
                 <img
                     src={photo}
@@ -41,8 +33,11 @@ const ItemAllProducts = ({name, oldPrice, newPrice, photo}) => {
                     </div>
 
             }
-            <button onClick={() => addProduct()}>Добавить</button>
-        </div>
+            <button onClick={(event) => {
+                event.preventDefault();
+                AddProductInCart((data) => dispatch(data), user, id)
+            }}>Добавить</button>
+        </Link>
     );
 };
 

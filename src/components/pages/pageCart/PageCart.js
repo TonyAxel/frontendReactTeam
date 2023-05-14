@@ -1,8 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ItemProductsCart from "./ItemProductsCart";
 import ItemShopsCart from "./ItemShopsCart";
+import AxiosClient from "../../../axiosClient/AxiosClient";
 
 const PageCart = () => {
+
+    const [cart, setCart] = useState({
+        products: []
+    });
+
+    useEffect(() => {
+        AxiosClient.post('/getInfoCart')
+            .then((res) => {
+                setCart(res.data);
+            })
+    }, []);
+
+
+
+
     return (
         <div className='page_content'>
             <div className='cart_content'>
@@ -12,19 +28,22 @@ const PageCart = () => {
                             Корзина
                         </span>
                         <span className='cart_content_products_header_weight'>
-                            Вес корзины 3.5 кг
+                            Вес корзины {cart?.weight?.toFixed(2)} кг
                         </span>
 
                         <button>Очистить корзину</button>
                     </div>
                     <div className="cart_content_products-products">
-                        <ItemProductsCart/>
-                        <ItemProductsCart/>
-                        <ItemProductsCart/>
-                        <ItemProductsCart/>
-                        <ItemProductsCart/>
-                        <ItemProductsCart/>
-                        <ItemProductsCart/>
+                        {
+                            cart.products.map((product) => (
+                                <ItemProductsCart
+                                    image={product.image}
+                                    name={product.name_product}
+                                    weight={product.weight}
+                                    count={product.cart_product.filter(item  => item.cart_id === cart.cart)[0].count}/>
+                            ))
+                        }
+
                     </div>
                 </div>
                 <div className="cart_content_shops">

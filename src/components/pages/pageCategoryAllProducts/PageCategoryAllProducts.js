@@ -37,7 +37,8 @@ const PageCategoryAllProducts = () => {
                                                 oldPrice={product.cost}
                                                 newPrice={product.discounted_cost === 0 ? '' : product.discounted_cost}
                                                 name={product.name_product.split(" ", 3).join(" ")}
-                                                photo={product.image}/>
+                                                photo={product.image}
+                                                id={product.id}/>
                                         })
                                     }
                                 </div>
