@@ -1,7 +1,7 @@
 .cart_content{
   margin-top: 30px;
   display: flex;
-  width: 1200px;
+  width: 1500px;
   justify-content: space-evenly;
   &_products{
     background-color: white;
@@ -61,6 +61,10 @@
               border: none;
               border-radius: 5px;
               background-color: $background-color-blue;
+              &:hover{
+                cursor: pointer;
+                background-color: rgb(16, 107, 150);
+              }
             }
           }
           &_count{
@@ -76,11 +80,18 @@
               border: none;
               border-radius: 5px;
               background-color: $background-color-blue;
+              &:hover{
+                cursor: pointer;
+                background-color: rgb(16, 107, 150);
+              }
             }
           }
           &_full-delete{
             margin-top: 8px;
             margin-left: 10px;
+            &:hover{
+              cursor: pointer;
+            }
           }
         }
       }
@@ -115,6 +126,7 @@
         padding: 20px;
         border: 1px solid black;
         border-radius: 5px;
+        width: 700px;
         &-header{
           border-bottom: 1px solid lightgray;
           padding-bottom: 10px;
@@ -142,8 +154,9 @@
         }
         &-body{
           display: flex;
+          justify-content: space-between;
           &-count{
-            margin-right: 150px;
+            min-width: 350px;
             span{
               font-weight: 500;
             }
@@ -157,7 +170,7 @@
             }
           }
           &-no_count{
-            margin-right: 80px;
+            width: 350px;
             span{
               font-weight: 500;
             }

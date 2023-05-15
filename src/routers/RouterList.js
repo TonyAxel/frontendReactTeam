@@ -6,6 +6,7 @@ import PageSubCategoryAllProducts from "../components/pages/pageSubCategoryAllPr
 import PageProductInfo from "../components/pages/pageProductInfo/PageProductInfo";
 import PageProfile from "../components/pages/pageProfile/PageProfile";
 import PageCart from "../components/pages/pageCart/PageCart";
+import PageSearch from "../components/pages/pageSearch/PageSearch";
 const publicRouters = [
     {path: '/', component: <MainPage/>},
     {path: '/shop/:id/products', component: <PageShopAllProducts/>},
@@ -14,6 +15,7 @@ const publicRouters = [
     {path: '/product/:id', component: <PageProductInfo/>},
     {path: '/profile', component: <PageProfile/>},
     {path: '/cart', component: <PageCart/>},
+    {path: '/search/:string', component: <PageSearch/>},
     {path: '*', component: <Navigate to={'/'}/>}
 ]
 

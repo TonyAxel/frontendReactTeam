@@ -9,6 +9,7 @@ const Header = () => {
 
     const dispatch = useDispatch();
     const {user, countProduct} = useSelector(state => state.authReducer)
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         if (user.id)
@@ -54,8 +55,8 @@ const Header = () => {
                     <p>Каталог</p>
                 </div>
                 <div className='header__left_search'>
-                    <input type="text" placeholder='Поиск продуктов'/>
-                    <button>Найти</button>
+                    <input type="text" placeholder='Поиск продуктов' onKeyDown={(e) => setSearch(e.target.value)}/>
+                    <Link to={`/search/${search}`} className='search'>Найти</Link>
                 </div>
             </div>
             <div className="header__right">

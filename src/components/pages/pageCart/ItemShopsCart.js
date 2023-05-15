@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ItemShopsCart = () => {
+const ItemShopsCart = ({price, products, noProducts}) => {
     return (
         <div className='cart_content_shops-shops_item'>
             <div className="cart_content_shops-shops_item-header">
@@ -13,7 +13,7 @@ const ItemShopsCart = () => {
                     </div>
                 </div>
                 <div className="cart_content_shops-shops_item-header-price">
-                    <span>Итого: 657,4 р</span>
+                    <span>Итого: {price} р</span>
                 </div>
             </div>
             <div className="cart_content_shops-shops_item-body">
@@ -22,11 +22,11 @@ const ItemShopsCart = () => {
                         В наличии:
                     </span> <br/>
                     <ul>
-                        <li>Яблоки</li>
-                        <li>Яблоки</li>
-                        <li>Яблоки</li>
-                        <li>Яблоки</li>
-                        <li>Яблоки</li>
+                        {
+                            products.map((product) => (
+                                <li>{product.name_product}</li>
+                            ))
+                        }
                     </ul>
                 </div>
                 <div className="cart_content_shops-shops_item-body-no_count">
@@ -34,11 +34,11 @@ const ItemShopsCart = () => {
                         Отсутствует:
                     </span> <br/>
                     <ul>
-                        <li>Яблоки</li>
-                        <li>DSssd</li>
-                        <li>Яблоки</li>
-                        <li>Яблоки</li>
-                        <li>Яблоки</li>
+                        {
+                            noProducts?.map((product) => (
+                                <li>{product.name_product}</li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

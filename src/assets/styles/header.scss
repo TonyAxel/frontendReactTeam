@@ -55,11 +55,13 @@
                 }
             }
 
-            button {
-                top: -5px;
+            .search{
                 height: 100%;
                 font-size: 16px;
                 margin-left: 20px;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
                 background-color: $background-color-blue;
                 color: white;
                 border: none;

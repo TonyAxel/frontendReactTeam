@@ -1,6 +1,65 @@
 import React from 'react';
+import AddProductInCart from "../../functions/addProductInCart";
+import AxiosClient from "../../../axiosClient/AxiosClient";
+import {setCart, setCompressionCart, setCountProduct} from "../../../store/AuthSlice";
+import {useDispatch} from "react-redux";
 
-const ItemProductsCart = ({image, name, weight, count}) => {
+const ItemProductsCart = ({image, name, weight, count, id}) => {
+    const dispatch = useDispatch();
+    function AddProduct(id){
+        AxiosClient.post('/addCountProduct', {id: id})
+            .then((res) => {
+                AxiosClient.post('/getInfoCart')
+                    .then((res) => {
+                        dispatch(setCart(res.data))
+                    })
+                AxiosClient.post('/comparisonCart')
+                    .then((res) => {
+                        dispatch(setCompressionCart(res.data))
+                    })
+            })
+    }
+
+    function DelProduct(id){
+        AxiosClient.post('/delCountProduct', {id: id})
+            .then((res) => {
+                AxiosClient.post('/getInfoCart')
+                    .then((res) => {
+                        dispatch(setCart(res.data))
+                    })
+                AxiosClient.post('/CountProductInCart')
+                    .then(
+                        (res) => {
+                            dispatch(setCountProduct(res.data))
+                        }
+                    )
+                AxiosClient.post('/comparisonCart')
+                    .then((res) => {
+                        dispatch(setCompressionCart(res.data))
+                    })
+            })
+    }
+
+    function DelProductInCart(id) {
+        AxiosClient.post('/deleteProductInCart', {id: id})
+            .then((res) => {
+                AxiosClient.post('/getInfoCart')
+                    .then((res) => {
+                        dispatch(setCart(res.data))
+                    })
+                AxiosClient.post('/CountProductInCart')
+                    .then(
+                        (res) => {
+                            dispatch(setCountProduct(res.data))
+                        }
+                    )
+                AxiosClient.post('/comparisonCart')
+                    .then((res) => {
+                        dispatch(setCompressionCart(res.data))
+                    })
+            })
+    }
+
     return (
         <div className='cart_content_products-products_item'>
             <div className="cart_content_products-products_item-img">
@@ -10,20 +69,20 @@ const ItemProductsCart = ({image, name, weight, count}) => {
                 <span>{name}</span>
             </div>
             <div className="cart_content_products-products_item-weight">
-                <span>Вес: {weight} гр</span>
+                <span>Вес: {weight} кг</span>
             </div>
             <div className="cart_content_products-products_item-count">
                 <div className="cart_content_products-products_item-count_delete">
-                    <button>—</button>
+                    <button onClick={() => DelProduct(id)} >—</button>
                 </div>
                 <div className="cart_content_products-products_item-count_count">
                     <span>{count}</span>
                 </div>
                 <div className="cart_content_products-products_item-count_add">
-                    <button>╂</button>
+                    <button onClick={() => AddProduct(id)} >╂</button>
                 </div>
 
-                <div className='cart_content_products-products_item-count_full-delete'>
+                <div className='cart_content_products-products_item-count_full-delete' onClick={() => DelProductInCart(id)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                          className="bi bi-trash" viewBox="0 0 16 16">
                         <path

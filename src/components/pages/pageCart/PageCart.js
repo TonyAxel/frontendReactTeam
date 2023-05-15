@@ -2,22 +2,42 @@ import React, {useEffect, useState} from 'react';
 import ItemProductsCart from "./ItemProductsCart";
 import ItemShopsCart from "./ItemShopsCart";
 import AxiosClient from "../../../axiosClient/AxiosClient";
+import {useDispatch, useSelector} from "react-redux";
+import {setCart, setCompressionCart, setCountProduct} from "../../../store/AuthSlice";
 
 const PageCart = () => {
 
-    const [cart, setCart] = useState({
-        products: []
-    });
+    const {cart, compressionCart} = useSelector(state => state.authReducer)
+    const dispatch = useDispatch();
 
     useEffect(() => {
         AxiosClient.post('/getInfoCart')
             .then((res) => {
-                setCart(res.data);
+                dispatch(setCart(res.data))
+            })
+        AxiosClient.post('/comparisonCart')
+            .then((res) => {
+                dispatch(setCompressionCart(res.data))
             })
     }, []);
 
+    console.log()
 
-
+    function clearCart() {
+        AxiosClient.post('/deleteAllProductInCart')
+            .then((res) => {
+                AxiosClient.post('/getInfoCart')
+                    .then((res) => {
+                        dispatch(setCart(res.data))
+                    })
+                AxiosClient.post('/CountProductInCart')
+                    .then(
+                        (res) => {
+                            dispatch(setCountProduct(res.data))
+                        }
+                    )
+            })
+    }
 
     return (
         <div className='page_content'>
@@ -30,17 +50,20 @@ const PageCart = () => {
                         <span className='cart_content_products_header_weight'>
                             Вес корзины {cart?.weight?.toFixed(2)} кг
                         </span>
-
-                        <button>Очистить корзину</button>
+                        {
+                            cart.products?.length > 0 && <button onClick={() => clearCart()}>Очистить корзину</button>
+                        }
                     </div>
                     <div className="cart_content_products-products">
                         {
-                            cart.products.map((product) => (
+                            cart.products?.map((product) => (
                                 <ItemProductsCart
+                                    key={product.id}
                                     image={product.image}
                                     name={product.name_product}
                                     weight={product.weight}
-                                    count={product.cart_product.filter(item  => item.cart_id === cart.cart)[0].count}/>
+                                    count={product.cart_product.filter(item  => item.cart_id === cart.cart)[0].count}
+                                    id={product.id}/>
                             ))
                         }
 
@@ -55,8 +78,12 @@ const PageCart = () => {
                         <button>Проанализировать</button>
                     </div>
                     <div className="cart_content_shops-shops">
-                        <ItemShopsCart/>
-                        <ItemShopsCart/>
+                        {
+                            compressionCart?.map(cart => (
+                                <ItemShopsCart price={cart.summ} products={cart.products} noProducts={cart.no_products}/>
+                            ))
+                        }
+
                     </div>
                 </div>
             </div>
