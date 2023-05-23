@@ -1,13 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
 import Router from './Router'
-import { publicRouters } from './RouterList'
+import {authRouters, publicRouters} from './RouterList'
 import AxiosClient from "../axiosClient/AxiosClient";
 import {useEffect} from "react";
 import {setUser} from "../store/AuthSlice";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 const Index = () => {
 
     const dispatch = useDispatch();
+    const {user} = useSelector(state => state.authReducer)
     useEffect(() => {
         localStorage.getItem('ACCESS_TOKEN') && AxiosClient.get('/user').then(r => dispatch(setUser(r.data)))
     }, []);
@@ -20,6 +21,14 @@ const Index = () => {
                     <Route>
                         {
                             publicRouters.map(({path,component},i) => {
+                                return <Route key={i} path={path} element={component} />
+                            })
+                        }
+                    </Route>
+                    <Route>
+                        {
+                            user.id &&
+                            authRouters.map(({path,component},i) => {
                                 return <Route key={i} path={path} element={component} />
                             })
                         }

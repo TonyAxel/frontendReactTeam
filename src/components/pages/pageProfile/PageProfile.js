@@ -14,7 +14,7 @@ const PageProfile = () => {
         <div className="page_content">
             <div className="profile">
                 <div className="profile_hi">
-                    <h2>Добро пожаловать, пользователь!</h2>
+                    <h2>Добро пожаловать, {user.name_customer}!</h2>
                 </div>
                 <div className="profile_placeholder-phone">
                     <p>Ваш текущий номер телефона {user.phone}</p>
@@ -68,7 +68,7 @@ const PageProfile = () => {
                                             /\d/, /\d/, "-", /\d/, /\d/
                                         ]}
                                         id="phone"
-                                        placeholder="Введите свой номер телефона"
+                                        placeholder="Введите новый номер телефона"
                                         type="text"
                                         className="profile_phones_new-phone"
                                     />

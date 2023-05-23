@@ -14,7 +14,7 @@ const ItemSlider = ({product, oldPrice, newPrice, shop, photo, id}) => {
                     <img src={photo} alt=""/>
                     <p className="name_product">{product.split(" ", 3).join(" ")}</p>
                     <p className="old_price">{oldPrice} ₽</p>
-                    <p className="new_price">{newPrice} ₽</p>
+                    <p className="new_price">{newPrice.toFixed(0)} ₽</p>
                     <button onClick={(event) => {
                         event.preventDefault();
                         AddProductInCart((data) => dispatch(data), user, id)

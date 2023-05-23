@@ -17,6 +17,7 @@ const PageCart = () => {
             })
         AxiosClient.post('/comparisonCart')
             .then((res) => {
+                console.log(res.data)
                 dispatch(setCompressionCart(res.data))
             })
     }, []);
@@ -75,12 +76,16 @@ const PageCart = () => {
                             Магазины для приобретения
                         </span>
 
-                        <button>Проанализировать</button>
                     </div>
                     <div className="cart_content_shops-shops">
                         {
                             compressionCart?.map(cart => (
-                                <ItemShopsCart price={cart.summ} products={cart.products} noProducts={cart.no_products}/>
+                                <ItemShopsCart price={cart.summ}
+                                               name={cart.name_shop}
+                                               image={cart.logo_shop}
+                                               products={cart.products}
+                                               noProducts={cart.no_products}
+                                               analog={cart.analog}/>
                             ))
                         }
 

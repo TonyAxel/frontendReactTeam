@@ -56,11 +56,13 @@ const PageProductInfo = () => {
                                     <p className="content_product_main_info_shops_shop_low-cost">{product.discounted_cost === 0 ? product.cost : product.discounted_cost} ₽</p>
                                 </div>
                                 {
+                                    alternativeProduct !== '' &&
                                     alternativeProduct.map(product => (
                                         <div className="content_product_main_info_shops_shop" key={product.id}>
                                             <img src={product?.shop?.logo_shop} alt=""/>
                                             <p className="content_product_main_info_shops_shop_name_shop">{product?.shop?.name_shop}</p>
-                                            <p className="content_product_main_info_shops_shop_low-cost">{product.discounted_cost === 0 ? product.cost : product.discounted_cost} ₽</p>
+                                            <p className="content_product_main_info_shops_shop_low-cost">{product.discounted_cost === 0 ?
+                                                product.cost : product.discounted_cost.toFixed(0)} ₽</p>
                                         </div>
                                     ))
                                 }

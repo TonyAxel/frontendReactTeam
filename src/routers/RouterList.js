@@ -13,10 +13,14 @@ const publicRouters = [
     {path: '/category/:id/products', component: <PageCategoryAllProducts/>},
     {path: '/subcategory/:id/products', component: <PageSubCategoryAllProducts/>},
     {path: '/product/:id', component: <PageProductInfo/>},
-    {path: '/profile', component: <PageProfile/>},
-    {path: '/cart', component: <PageCart/>},
+
     {path: '/search/:string', component: <PageSearch/>},
     {path: '*', component: <Navigate to={'/'}/>}
 ]
 
-export {publicRouters};
+const authRouters = [
+    {path: '/profile', component: <PageProfile/>},
+    {path: '/cart', component: <PageCart/>},
+]
+
+export {publicRouters, authRouters};

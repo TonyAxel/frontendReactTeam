@@ -24,7 +24,7 @@ const ItemAllProducts = ({name, oldPrice, newPrice, photo, id}) => {
                 newPrice !== '' ?
                     <div>
                         <p className="old_price_p">{oldPrice}</p>
-                        <p className={classes}>{newPrice} ₽</p>
+                        <p className={classes}>{newPrice.toFixed(2)} ₽</p>
                     </div> :
                     <div>
                         <p className={classes}>{oldPrice} ₽</p>
